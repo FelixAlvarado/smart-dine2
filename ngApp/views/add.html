@@ -1,0 +1,49 @@
+<a href="/home">Home</a>
+<h2>Add New Restaurant</h2>
+<input placeholder="Name" ng-model="vm.Place.name"/>
+Restaurant Type:<select>
+    <option  ng-model="vm.Place.type" value="American"/>American</option>
+    <option  ng-model="vm.Place.type" value="Chinese"/>Chinese</option>
+    <option  ng-model="vm.Place.type" value="Japanese"/>Japanese</option>
+    <option  ng-model="vm.Place.type" value="Mediterranean"/>Mediterranean</option>
+    <option  ng-model="vm.Place.type" value="Mexican"/>Mexican</option>
+  </select>
+
+  Restaurant Style:<select>
+      <option  ng-model="vm.Place.style" value="Full Service"/>Full Service</option>
+      <option  ng-model="vm.Place.style" value="Counter Service"/>Counter Service</option>
+      <option  ng-model="vm.Place.style" value="Fast Food"/>Fast Food</option>
+    </select>
+
+    Overall Rating:<select>
+        <option  ng-model="vm.Place.rating" value="1"/>1</option>
+        <option  ng-model="vm.Place.rating" value="2"/>2</option>
+        <option  ng-model="vm.Place.rating" value="3"/>3</option>
+          <option  ng-model="vm.Place.rating" value="4"/>4</option>
+            <option  ng-model="vm.Place.rating" value="5"/>5</option>
+      </select>
+      Food Rating:<select>
+          <option  ng-model="vm.Place.food" value="1"/>1</option>
+          <option  ng-model="vm.Place.food" value="2"/>2</option>
+          <option  ng-model="vm.Place.food" value="3"/>3</option>
+          <option  ng-model="vm.Place.food" value="4"/>4</option>
+              <option  ng-model="vm.Place.food" value="5"/>5</option>
+        </select>
+
+       Service:<select>
+            <option  ng-model="vm.Place.service" value="1"/>1</option>
+            <option  ng-model="vm.Place.service" value="2"/>2</option>
+            <option  ng-model="vm.Place.service" value="3"/>3</option>
+              <option  ng-model="vm.Place.service" value="4"/>4</option>
+                <option  ng-model="vm.Place.service" value="5"/>5</option>
+          </select>
+
+          Atmosphere:<select>
+               <option  ng-model="vm.Place.decor" value="1"/>1</option>
+               <option  ng-model="vm.Place.decor" value="2"/>2</option>
+               <option  ng-model="vm.Place.decor" value="3"/>3</option>
+                 <option  ng-model="vm.Place.decor" value="4"/>4</option>
+                   <option  ng-model="vm.Place.decor" value="5"/>5</option>
+             </select>
+<input placeholder="Comments" ng-model="vm.Place.comment"/>
+<button ng-click="vm.add()">Submit</button>
