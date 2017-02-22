@@ -25,6 +25,8 @@ namespace smartdine.Controllers {
             });
           }
 
+
+
     constructor( private $state,
       private placeService) {
       this.place = placeService.list();
