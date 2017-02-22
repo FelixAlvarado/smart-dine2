@@ -24,8 +24,8 @@ var smartdine;
             PlaceService.prototype.get = function (id) {
                 return this.PlaceResource.get({ id: id });
             };
-            PlaceService.prototype.list = function () {
-                return this.PlaceResource.query();
+            PlaceService.prototype.filter = function (type) {
+                return this.PlaceResource.get({ type: type });
             };
             PlaceService.prototype.save = function (place) {
                 return this.PlaceResource.save({ id: place._id }, place).$promise;

@@ -3,29 +3,34 @@ var smartdine;
     var Controllers;
     (function (Controllers) {
         var HomeController = (function () {
-            function HomeController() {
+            function HomeController($stateParams) {
+                this.$stateParams = $stateParams;
+                this.typeId = $stateParams['type'];
             }
             HomeController.prototype.assign = function (word) {
                 this.type = word;
-                console.log(this.type);
-                return this.type;
             };
             return HomeController;
         }());
         Controllers.HomeController = HomeController;
         var ListController = (function () {
-            function ListController($state, placeService) {
+            function ListController($state, $stateParams, placeService) {
                 this.$state = $state;
+                this.$stateParams = $stateParams;
                 this.placeService = placeService;
-                this.place = placeService.list();
+                this.type = $stateParams['value'];
+                this.place = placeService.filter();
             }
             ListController.prototype.remove = function (id) {
                 var _this = this;
                 this.placeService.remove(id).then(function () {
                     _this.place = _this.placeService.list();
                     _this.$state.reload();
-                    ;
                 });
+            };
+            ListController.prototype.get = function (type) {
+                this.placeService.filter(this.type);
+                return type;
             };
             return ListController;
         }());

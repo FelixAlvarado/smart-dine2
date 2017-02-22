@@ -24,8 +24,8 @@ export class UserService {
        return this.PlaceResource.get({id:id});
      }
 
-     public list() {
-       return this.PlaceResource.query();
+     public filter(type) {
+       return this.PlaceResource.get({type:type});
      }
 
      public save(place) {

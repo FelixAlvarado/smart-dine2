@@ -10,6 +10,14 @@ router.get('/', function (req, res) {
         console.error(err);
     });
 });
+router.get('/', function (req, res) {
+    place_1.default.find({ type: req.body.type }).then(function (types) {
+        res.json(types);
+    }).catch(function (err) {
+        res.status(500);
+        console.error(err);
+    });
+});
 router.get('/:id', function (req, res) {
     place_1.default.findById(req.params['id']).then(function (type) {
         res.json(type);

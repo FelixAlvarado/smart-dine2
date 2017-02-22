@@ -17,7 +17,7 @@ var smartdine;
             .state('home', {
             url: '/home',
             templateUrl: '/ngApp/views/home.html',
-            controller: smartdine.Controllers.HomeController,
+            controller: smartdine.Controllers.ListController,
             controllerAs: 'vm'
         })
             .state('american', {

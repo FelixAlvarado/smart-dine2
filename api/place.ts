@@ -14,6 +14,16 @@ router.get('/', (req, res) => {
   })
 });
 
+// GET by type
+router.get('/', (req, res) => {
+  Place.find({type: req.body.type}).then((types)=> {
+      res.json(types);
+  }).catch((err) => {
+      res.status(500);
+      console.error(err);
+  })
+});
+
 // Get a single animal by id
 router.get('/:id', (req, res) => {
   Place.findById(req.params['id']).then((type) => {
