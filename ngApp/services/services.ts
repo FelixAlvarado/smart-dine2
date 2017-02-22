@@ -28,12 +28,12 @@ export class UserService {
        return this.PlaceResource.query();
      }
 
-     public save(Category) {
-       return this.PlaceResource.save({id:Category._id}, Category).$promise;
+     public save(place) {
+       return this.PlaceResource.save({id:place._id}, place).$promise;
      }
 
-     public remove(animalId) {
-       return this.PlaceResource.remove({id:animalId}).$promise;
+     public remove(placeId) {
+       return this.PlaceResource.remove({id:placeId}).$promise;
      }
 
      constructor($resource:ng.resource.IResourceService) {

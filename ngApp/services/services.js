@@ -27,11 +27,11 @@ var smartdine;
             PlaceService.prototype.list = function () {
                 return this.PlaceResource.query();
             };
-            PlaceService.prototype.save = function (Category) {
-                return this.PlaceResource.save({ id: Category._id }, Category).$promise;
+            PlaceService.prototype.save = function (place) {
+                return this.PlaceResource.save({ id: place._id }, place).$promise;
             };
-            PlaceService.prototype.remove = function (animalId) {
-                return this.PlaceResource.remove({ id: animalId }).$promise;
+            PlaceService.prototype.remove = function (placeId) {
+                return this.PlaceResource.remove({ id: placeId }).$promise;
             };
             return PlaceService;
         }());

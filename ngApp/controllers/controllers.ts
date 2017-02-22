@@ -3,26 +3,69 @@ namespace smartdine.Controllers {
     export class HomeController {
       public type
       public assign(word) {
-        this.type = word;
-         console.log(this.type);
+       this.type = word;
+       console.log(this.type);
+       return this.type
+
+
+
+
 
 
       }
     }
 
+    export class ListController{
+      public place
+
+      public remove(id) {
+            this.placeService.remove(id).then(() => {
+              this.place = this.placeService.list();
+              this.$state.reload();;
+            });
+          }
+
+    constructor( private $state,
+      private placeService) {
+      this.place = placeService.list();
+    }
+}
+
+export class EditController {
+      public Place
+public placeId
+      public save() {
+
+      this.Place._id = this.placeId;
+        this.placeService.save(this.Place).then(()=> {
+          this.$state.go('home'); // navigate back to home
+        }).catch((err) => {
+          console.error(err);
+        })
+      }
+
+      constructor(
+        private placeService,
+        private $state,
+        private $stateParams
+      ) {
+        this.placeId = $stateParams['id'];
+      }
+  }
+
 export class AddController{
 
 
-          public Category = {};
+          public Place
 
           public add() {
-            // this.placeService.save(this.Category).then(()=> {
-            // this.Category = {}; //clear form
-            // this.$state.go('home');
-            // }).catch((err) => {
-            //   console.error(err);
-            // })
-            console.log(this.Category);
+            this.placeService.save(this.Place).then(()=> {
+            this.Place = null; //clear form
+            this.$state.go('home');
+            }).catch((err) => {
+              console.error(err);
+            })
+
           }
           public constructor(
             private $state,

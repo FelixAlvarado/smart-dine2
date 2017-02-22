@@ -28,9 +28,15 @@ namespace smartdine {
             .state('american', {
                 url: '/american',
                 templateUrl: '/ngApp/views/american.html',
-                controller: smartdine.Controllers.HomeController,
+                controller: smartdine.Controllers.ListController,
                 controllerAs: 'vm'
             })
+            .state('edit', {
+               url: '/edit/:id',
+               templateUrl: '/ngApp/views/edit.html',
+               controller: smartdine.Controllers.EditController,
+               controllerAs: 'vm'
+})
             .state('add', {
                 url: '/add',
                 templateUrl: '/ngApp/views/add.html',

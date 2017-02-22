@@ -1,9 +1,9 @@
 "use strict";
 var express = require("express");
-var category_1 = require("../models/category");
+var place_1 = require("../models/place");
 var router = express.Router();
 router.get('/', function (req, res) {
-    category_1.default.find().then(function (types) {
+    place_1.default.find().then(function (types) {
         res.json(types);
     }).catch(function (err) {
         res.status(500);
@@ -11,12 +11,12 @@ router.get('/', function (req, res) {
     });
 });
 router.get('/:id', function (req, res) {
-    category_1.default.findById(req.params['id']).then(function (type) {
+    place_1.default.findById(req.params['id']).then(function (type) {
         res.json(type);
     });
 });
 router.post('/', function (req, res) {
-    var place = new category_1.default();
+    var place = new place_1.default();
     place.type = req.body.type;
     place.name = req.body.name;
     place.rating = req.body.rating;
@@ -33,7 +33,7 @@ router.post('/', function (req, res) {
 });
 router.post('/:id', function (req, res) {
     var typeId = req.params.id;
-    category_1.default.findById(typeId).then(function (place) {
+    place_1.default.findById(typeId).then(function (place) {
         place.type = req.body.type;
         place.name = req.body.name;
         place.rating = req.body.rating;
@@ -53,7 +53,7 @@ router.post('/:id', function (req, res) {
 });
 router.delete('/:id', function (req, res) {
     var typeId = req.params.id;
-    category_1.default.remove({ _id: typeId }).then(function () {
+    place_1.default.remove({ _id: typeId }).then(function () {
         res.sendStatus(200);
     }).catch(function (err) {
         res.status(500);

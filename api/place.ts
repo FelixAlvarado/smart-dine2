@@ -1,7 +1,8 @@
 import * as express from 'express';
-import Place from '../models/category';
+import Place from '../models/place';
 
 let router = express.Router();
+
 
 // GET all animals
 router.get('/', (req, res) => {

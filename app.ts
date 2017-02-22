@@ -5,11 +5,11 @@ import * as logger from 'morgan';
 import * as cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
 import * as ejs from 'ejs';
-import Category from './models/category';
+import Place from './models/place';
 import routes from './routes/index';
 import users from './routes/users';
 import * as mongoose from 'mongoose'
-import category from './api/category';
+import place from './api/place';
 var passport = require('passport');
 
 
@@ -37,7 +37,7 @@ app.use('/userRoutes/api/', users);
 app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 app.use('/ngApp', express.static(path.join(__dirname, 'ngApp')));
 app.use('/api', express.static(path.join(__dirname, 'api')));
-app.use('/api/category', category);
+app.use('/api/category', place);
 app.use('/', routes);
 app.use('/users', users);
 

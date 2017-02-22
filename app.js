@@ -7,7 +7,7 @@ var bodyParser = require("body-parser");
 var index_1 = require("./routes/index");
 var users_1 = require("./routes/users");
 var mongoose = require("mongoose");
-var category_1 = require("./api/category");
+var place_1 = require("./api/place");
 var passport = require('passport');
 require('./models/user');
 require('./config/passport');
@@ -28,7 +28,7 @@ app.use('/userRoutes/api/', users_1.default);
 app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 app.use('/ngApp', express.static(path.join(__dirname, 'ngApp')));
 app.use('/api', express.static(path.join(__dirname, 'api')));
-app.use('/api/category', category_1.default);
+app.use('/api/category', place_1.default);
 app.use('/', index_1.default);
 app.use('/users', users_1.default);
 app.get('/*', function (req, res, next) {
