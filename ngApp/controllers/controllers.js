@@ -29,8 +29,8 @@ var smartdine;
                 });
             };
             ListController.prototype.get = function (type) {
-                this.placeService.filter(this.type);
-                return type;
+                console.log(type);
+                this.placeService.filter(type);
             };
             return ListController;
         }());

@@ -22,8 +22,9 @@ public type
           }
 
 public get(type){
-  this.placeService.filter(this.type)
-  return type
+  console.log(type);
+  this.placeService.filter(type);
+
 }
 
 

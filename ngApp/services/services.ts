@@ -25,7 +25,8 @@ export class UserService {
      }
 
      public filter(type) {
-       return this.PlaceResource.get({type:type});
+console.log(type);
+       return this.PlaceResource.query({type:type});
      }
 
      public save(place) {

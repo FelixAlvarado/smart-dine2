@@ -4,6 +4,7 @@
 <h4>Restaurants</h4>
   <div ng-repeat="place in vm.place | orderBy: '-rating'">
    <h5>{{place.name}} <a href="/edit/{{place._id}}">edit</a>  <a href="#" ng-click="vm.remove(place._id)">delete</a></h5>
+   <p>{{place.type}}</p>
     <p>Score: {{place.rating}} | Food: {{place.food}} | Service: {{place.service}} | Decor: {{place.decor}}</p>
     <p>Style: {{place.style}}</p>
     <p>"{{place.comment}}"</p>
