@@ -1,6 +1,31 @@
-<a href="/">Login</a>
+<!-- <a href="/">Login</a>
 <h1> Registration</h1>
 <input type="text" placeholder="username" ng-model="vm.user.username"/>
 <input type="text" placeholder="email" ng-model="vm.user.email"/>
 <input type="password" placeholder="password" ng-model="vm.user.password"/>
-<button type="button" ng-click="vm.signup()">Submit</button>
+<button type="button" ng-click="vm.signup()">Submit</button> -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home">Smart Dine</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a href="/">Login</a></li>
+      <li class="active"><a href="/register">Register</a></li>
+
+    </ul>
+  </div>
+</nav>
+
+<div id="login">
+  <form name='form-login'>
+    <p id="logh">No account, no problem.</p>
+      <input type="text" id="user" placeholder="New Username" ng-model="vm.user.username">
+
+
+      <input type="password" id="pass" placeholder="New Password" ng-model="vm.user.password">
+
+    <input type="submit" value="Register" ng-click="vm.signup()">
+
+</form>
+</div>

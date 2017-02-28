@@ -1,13 +1,31 @@
 
-<h2>Login</h2>
-<input type="text" placeholder="username" ng-model="vm.userInfo.username"/>
-<input type="password" placeholder="password" ng-model="vm.userInfo.password"/>
-<button type="button" ng-click="vm.login()">Login</button>
-<div style="padding-top: 25px;">
-  <a href="/register">Register</a>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home">Smart Dine</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Login</a></li>
+      <li><a href="/register">Register</a></li>
+
+    </ul>
+  </div>
+</nav>
+<!-- <div id="words">
+  <h1>Login</h1>
+  <h5>The hottest new restaurants are waiting</h5>
+</div> -->
+<!-- not working the way i want -->
+<!-- <div id="logb"><p id="logh">Login. Eat Well. Feed the soul.</p></div> -->
+<div id="login">
+  <form name='form-login'>
+    <p id="logh">Login. Eat Well. Feed the soul.</p>
+      <input type="text" id="user" placeholder="Username" ng-model="vm.userInfo.username">
+
+
+      <input type="password" id="pass" placeholder="Password" ng-model="vm.userInfo.password">
+
+    <input type="submit" value="Login" ng-click="vm.login()">
+
+</form>
 </div>
-
-<!-- <ul id="menu">
-    <li><a href="/register">Register</a></li>
-
-</ul> -->

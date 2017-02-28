@@ -1,11 +1,25 @@
-<h1>Smart Dine</h1>
-<a href="/">Login</a>
-<p>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" class="active" href="/home">Smart Dine</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/">Login</a></li>
+      <li><a href="/register">Register</a></li>
+
+    </ul>
+  </div>
+</nav>
+<div id="homebox">
+<h1 id="hometext">Smart Dine</h1>
+
+<p id="hometext">
     Read, Post, Eat Well
 </p>
-<p> Choose your craving and let your journey to a happy stomach begin</p>
-<a href="/american" value="American" ng-click="vm.get('American')">American</a>
-<a href="/category">Chinese</a>
-<a href="/category">Japanese</a>
-<a href="/category">Mediterranean</a>
-<a href="/category">Mexican</a>
+<p id="hometext"> Choose your craving and let your journey to a happy stomach begin</p>
+<a href="/american" value="American" ng-click="vm.get('American')" id="bluelink">American</a> |
+<a href="/category"id="bluelink">Chinese</a> |
+<a href="/category"id="bluelink">Japanese</a> |
+<a href="/category" id="bluelink">Mediterranean</a> |
+<a href="/category" id="bluelink">Mexican</a>
+</div>

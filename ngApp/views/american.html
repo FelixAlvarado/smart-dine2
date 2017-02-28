@@ -1,12 +1,25 @@
-<a href="/home">Home</a>
-<h2>American Restaurants</h2>
-<a href="/add">Add Restaurant</a>
-<h4>Restaurants</h4>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home">Smart Dine</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/">Login</a></li>
+      <li><a href="/register">Register</a></li>
+
+    </ul>
+  </div>
+</nav>
+<div id="listbox">
+<h1>American Restaurants</h2>
+<a href="/add" id="bluelink">Add Restaurant</a>
+
   <div ng-repeat="place in vm.place | orderBy: '-rating'">
-   <h5>{{place.name}} <a href="/edit/{{place._id}}">edit</a>  <a href="#" ng-click="vm.remove(place._id)">delete</a></h5>
+   <h5>{{place.name}} <a id="purplelink" href="/edit/{{place._id}}">edit</a>  <a href="#" id="redlink" ng-click="vm.remove(place._id)">delete</a></h5>
    <p>{{place.type}}</p>
     <p>Score: {{place.rating}} | Food: {{place.food}} | Service: {{place.service}} | Decor: {{place.decor}}</p>
     <p>Style: {{place.style}}</p>
     <p>"{{place.comment}}"</p>
   <hr>
   </div>
+</div>
