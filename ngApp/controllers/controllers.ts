@@ -1,3 +1,4 @@
+
 namespace smartdine.Controllers {
 
     export class HomeController {
@@ -13,31 +14,50 @@ namespace smartdine.Controllers {
 
     export class ListController{
       public place
-public type
+      public type
+
+      public admin(id){
+        let token = window.localStorage['token'];
+        let payload = JSON.parse(window.atob(token.split('.')[1]));
+        if(payload.role === 'Admin') {
+          this.$state.go('edit' , {id: id})
+        }
+        else {alert('Only Admins can edit restaurants.')}
+      }
       public remove(id) {
+        let token = window.localStorage['token'];
+        let payload = JSON.parse(window.atob(token.split('.')[1]));
+          if(payload.role === 'Admin') {
             this.placeService.remove(id).then(() => {
-              this.place = this.placeService.list();
+              this.place = this.placeService.filter();
               this.$state.reload();
-            });
+            });}
+            else {alert('Only Admins can edit restaurants.')}
           }
 
-public get(type){
-  console.log(type);
-  this.placeService.filter(type);
+//       public get(type){
+//           console.log(type);
+//           this.placeService.filter(type);
+//
+// }
 
-}
 
+      constructor( private $state,private $stateParams,
+        private placeService) {
+          this.type = $stateParams['type'];
+          this.place = placeService.filter(this.type);
+          this.place.type = $stateParams['type'];
 
-    constructor( private $state,private $stateParams,
-      private placeService) {
-          this.type = $stateParams['value'];
-      this.place = placeService.filter();
     }
 }
 
 export class EditController {
       public Place
 public placeId
+
+// public name
+// public type
+
       public save() {
 
       this.Place._id = this.placeId;
@@ -54,6 +74,11 @@ public placeId
         private $stateParams
       ) {
         this.placeId = $stateParams['id'];
+
+
+// this.Place = $stateParams['id'];
+//       this.Place = placeService.filter(this.type);
+// this.Place.name = $stateParams['id'];
       }
   }
 
@@ -91,6 +116,7 @@ export class AddController{
       public userInfo
 
       public login() {
+        this.userInfo.role = 'Guest'
         this.userService.loginUser(this.userInfo).then((data) => {
           this.$window.localStorage.setItem("token", JSON.stringify(data.token));
           alert('login successful');
@@ -109,6 +135,31 @@ export class AddController{
       }
 
     }
+
+    export class AdminController {
+      public userInfo
+
+      public login() {
+        this.userInfo.role = 'Admin'
+        this.userService.loginUser(this.userInfo).then((data) => {
+          this.$window.localStorage.setItem("token", JSON.stringify(data.token));
+          alert('login successful');
+          this.$state.go('home');
+        }).catch((err)=>{
+          alert('Invalid Login');
+        })
+      }
+
+      public constructor(
+        private $state,
+        private userService,
+        public $window
+      ) {
+
+      }
+
+    }
+
 
     export class RegisterController {
         public user

@@ -6,15 +6,18 @@
     <ul class="nav navbar-nav">
       <li><a href="/">Login</a></li>
       <li><a href="/register">Register</a></li>
+        <li><a href="/admin">Admin</a></li>
 
     </ul>
   </div>
 </nav>
+
   <div id="addeditbox">
+
 <h2>Edit Restaurant</h2>
-<input color="black" placeholder="Name" ng-model="vm.Place.name"/>
+<input id="blacktext" color="black" placeholder="Name" ng-model="vm.Place.name"/>
 <hr>
-Restaurant Type:<select ng-model="vm.Place.type">
+Restaurant Type:<select id="blacktext" ng-model="vm.Place.type">
     <option   value="American"/>American</option>
     <option   value="Chinese"/>Chinese</option>
     <option   value="Japanese"/>Japanese</option>
@@ -22,20 +25,20 @@ Restaurant Type:<select ng-model="vm.Place.type">
     <option   value="Mexican"/>Mexican</option>
   </select>
 
-  Restaurant Style:<select ng-model="vm.Place.style">
+  Restaurant Style:<select id="blacktext" ng-model="vm.Place.style">
       <option   value="Full Service"/>Full Service</option>
       <option  value="Counter Service"/>Counter Service</option>
       <option value="Fast Food"/>Fast Food</option>
     </select>
 <hr>
-    Overall Rating:<select ng-model="vm.Place.rating">
+    Overall Rating:<select id="blacktext" ng-model="vm.Place.rating">
         <option  value="1"/>1</option>
         <option   value="2"/>2</option>
         <option   value="3"/>3</option>
           <option   value="4"/>4</option>
             <option  value="5"/>5</option>
       </select>
-      Food Rating:<select  ng-model="vm.Place.food">
+      Food Rating:<select id="blacktext"  ng-model="vm.Place.food">
           <option   value="1"/>1</option>
           <option  value="2"/>2</option>
           <option  value="3"/>3</option>
@@ -43,7 +46,7 @@ Restaurant Type:<select ng-model="vm.Place.type">
               <option  value="5"/>5</option>
         </select>
 
-       Service:<select ng-model="vm.Place.service">
+       Service:<select id="blacktext" ng-model="vm.Place.service">
             <option   value="1"/>1</option>
             <option   value="2"/>2</option>
             <option   value="3"/>3</option>
@@ -51,7 +54,7 @@ Restaurant Type:<select ng-model="vm.Place.type">
                 <option   value="5"/>5</option>
           </select>
 
-          Atmosphere:<select ng-model="vm.Place.decor">
+          Atmosphere:<select id="blacktext" ng-model="vm.Place.decor">
                <option  value="1"/>1</option>
                <option   value="2"/>2</option>
                <option   value="3"/>3</option>
@@ -59,7 +62,7 @@ Restaurant Type:<select ng-model="vm.Place.type">
                    <option   value="5"/>5</option>
              </select>
              <hr>
-<input size="50" placeholder="Comments" ng-model="vm.Place.comment"/>
+<input id="blacktext" size="50" placeholder="Comments" ng-model="vm.Place.comment"/>
 <hr>
-<button ng-click="vm.save()">Submit</button>
+<button id="blacktext" ng-click="vm.save()">Submit</button>
 </div>

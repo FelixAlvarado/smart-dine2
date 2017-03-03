@@ -28,7 +28,7 @@ app.use('/userRoutes/api/', users_1.default);
 app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 app.use('/ngApp', express.static(path.join(__dirname, 'ngApp')));
 app.use('/api', express.static(path.join(__dirname, 'api')));
-app.use('/api/category', place_1.default);
+app.use('/api/place', place_1.default);
 app.use('/', index_1.default);
 app.use('/users', users_1.default);
 app.get('/*', function (req, res, next) {

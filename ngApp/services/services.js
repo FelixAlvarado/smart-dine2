@@ -19,14 +19,13 @@ var smartdine;
         Services.UserService = UserService;
         var PlaceService = (function () {
             function PlaceService($resource) {
-                this.PlaceResource = $resource('/api/category/:id');
+                this.PlaceResource = $resource('/api/place/:id');
             }
             PlaceService.prototype.get = function (id) {
                 return this.PlaceResource.get({ id: id });
             };
             PlaceService.prototype.filter = function (type) {
-                console.log(type);
-                return this.PlaceResource.query({ type: type });
+                return this.PlaceResource.query({ id: type });
             };
             PlaceService.prototype.save = function (place) {
                 return this.PlaceResource.save({ id: place._id }, place).$promise;

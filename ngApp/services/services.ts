@@ -25,8 +25,8 @@ export class UserService {
      }
 
      public filter(type) {
-console.log(type);
-       return this.PlaceResource.query({type:type});
+// console.log(type);
+       return this.PlaceResource.query({id:type});
      }
 
      public save(place) {
@@ -38,7 +38,8 @@ console.log(type);
      }
 
      constructor($resource:ng.resource.IResourceService) {
-       this.PlaceResource = $resource('/api/category/:id');
+       this.PlaceResource = $resource('/api/place/:id');
+
      }
  }
 

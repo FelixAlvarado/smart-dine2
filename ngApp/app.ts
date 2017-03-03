@@ -13,6 +13,12 @@ namespace smartdine {
                 controller: smartdine.Controllers.LoginController,
                 controllerAs: 'vm'
             })
+            .state('admin', {
+                url: '/admin',
+                templateUrl: '/ngApp/views/admin.html',
+                controller: smartdine.Controllers.AdminController,
+                controllerAs: 'vm'
+            })
             .state('register', {
                 url: '/register',
                 templateUrl: '/ngApp/views/register.html',
@@ -25,9 +31,9 @@ namespace smartdine {
                 controller: smartdine.Controllers.ListController,
                 controllerAs: 'vm'
             })
-            .state('american', {
-                url: '/american',
-                templateUrl: '/ngApp/views/american.html',
+            .state('place', {
+                url: '/place/:type',
+                templateUrl: '/ngApp/views/place.html',
                 controller: smartdine.Controllers.ListController,
                 controllerAs: 'vm'
             })

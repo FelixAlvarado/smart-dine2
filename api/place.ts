@@ -15,8 +15,9 @@ router.get('/', (req, res) => {
 });
 
 // GET by type
-router.get('/', (req, res) => {
-  Place.find({type: req.body.type}).then((types)=> {
+router.get('/:id', (req, res) => {
+  console.log(req.params["id"]);
+  Place.find({type: req.params["id"]}).then((types)=> {
       res.json(types);
   }).catch((err) => {
       res.status(500);
@@ -25,11 +26,11 @@ router.get('/', (req, res) => {
 });
 
 // Get a single animal by id
-router.get('/:id', (req, res) => {
-  Place.findById(req.params['id']).then((type) => {
-    res.json(type);
-  });
-});
+// router.get('/:id', (req, res) => {
+//   Place.findById(req.params['id']).then((type) => {
+//     res.json(type);
+//   });
+// });
 
 // Create new animal
 router.post('/', (req, res) => {

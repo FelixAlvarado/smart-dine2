@@ -18,19 +18,33 @@ var smartdine;
                 this.$state = $state;
                 this.$stateParams = $stateParams;
                 this.placeService = placeService;
-                this.type = $stateParams['value'];
-                this.place = placeService.filter();
+                this.type = $stateParams['type'];
+                this.place = placeService.filter(this.type);
+                this.place.type = $stateParams['type'];
             }
+            ListController.prototype.admin = function (id) {
+                var token = window.localStorage['token'];
+                var payload = JSON.parse(window.atob(token.split('.')[1]));
+                if (payload.role === 'Admin') {
+                    this.$state.go('edit', { id: id });
+                }
+                else {
+                    alert('Only Admins can edit restaurants.');
+                }
+            };
             ListController.prototype.remove = function (id) {
                 var _this = this;
-                this.placeService.remove(id).then(function () {
-                    _this.place = _this.placeService.list();
-                    _this.$state.reload();
-                });
-            };
-            ListController.prototype.get = function (type) {
-                console.log(type);
-                this.placeService.filter(type);
+                var token = window.localStorage['token'];
+                var payload = JSON.parse(window.atob(token.split('.')[1]));
+                if (payload.role === 'Admin') {
+                    this.placeService.remove(id).then(function () {
+                        _this.place = _this.placeService.filter();
+                        _this.$state.reload();
+                    });
+                }
+                else {
+                    alert('Only Admins can edit restaurants.');
+                }
             };
             return ListController;
         }());
@@ -89,6 +103,7 @@ var smartdine;
             }
             LoginController.prototype.login = function () {
                 var _this = this;
+                this.userInfo.role = 'Guest';
                 this.userService.loginUser(this.userInfo).then(function (data) {
                     _this.$window.localStorage.setItem("token", JSON.stringify(data.token));
                     alert('login successful');
@@ -100,6 +115,26 @@ var smartdine;
             return LoginController;
         }());
         Controllers.LoginController = LoginController;
+        var AdminController = (function () {
+            function AdminController($state, userService, $window) {
+                this.$state = $state;
+                this.userService = userService;
+                this.$window = $window;
+            }
+            AdminController.prototype.login = function () {
+                var _this = this;
+                this.userInfo.role = 'Admin';
+                this.userService.loginUser(this.userInfo).then(function (data) {
+                    _this.$window.localStorage.setItem("token", JSON.stringify(data.token));
+                    alert('login successful');
+                    _this.$state.go('home');
+                }).catch(function (err) {
+                    alert('Invalid Login');
+                });
+            };
+            return AdminController;
+        }());
+        Controllers.AdminController = AdminController;
         var RegisterController = (function () {
             function RegisterController($state, userService) {
                 this.$state = $state;

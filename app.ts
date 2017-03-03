@@ -37,7 +37,7 @@ app.use('/userRoutes/api/', users);
 app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 app.use('/ngApp', express.static(path.join(__dirname, 'ngApp')));
 app.use('/api', express.static(path.join(__dirname, 'api')));
-app.use('/api/category', place);
+app.use('/api/place', place);
 app.use('/', routes);
 app.use('/users', users);
 

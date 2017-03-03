@@ -35,7 +35,10 @@ router.post('/Login/Local',(req, res, next) => {
       return next(err);
     }
     if(user){
-      return res.json({token: user.generateJWT()});
+      return res.json({token: user.generateJWT(
+        req.body.role
+
+      )});
     }
     return res.status(400).send(info);
   })(req, res, next);
