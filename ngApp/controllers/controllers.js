@@ -43,7 +43,7 @@ var smartdine;
                     });
                 }
                 else {
-                    alert('Only Admins can edit restaurants.');
+                    alert('Only Admins can delete restaurants.');
                 }
             };
             return ListController;

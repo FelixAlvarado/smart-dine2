@@ -13,6 +13,8 @@ body {
   margin: 0;
 }
 
+
+
 input {
   border: none;
   font-family: 'Open Sans', Arial, sans-serif;
@@ -71,15 +73,57 @@ text-align: center;
 }
 
 #redlink {
+  background-color: red; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+#redlink:hover{
+  background-color: white; /* Green */
   color: red;
 }
 
 #bluelink{
+  background-color: blue; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+#bluelink:hover{
+  background-color: white; /* Green */
   color: blue;
 }
 
-#purplelink{
+#purplelink:hover{
+  background-color: white; /* Green */
   color: purple;
+}
+
+#purplelink{
+  background-color: purple; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
 
 #login form {

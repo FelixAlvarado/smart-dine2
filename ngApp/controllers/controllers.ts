@@ -1,6 +1,7 @@
 
 namespace smartdine.Controllers {
 
+
     export class HomeController {
       public type
       public typeId
@@ -32,7 +33,7 @@ namespace smartdine.Controllers {
               this.place = this.placeService.filter();
               this.$state.reload();
             });}
-            else {alert('Only Admins can edit restaurants.')}
+            else {alert('Only Admins can delete restaurants.')}
           }
 
 //       public get(type){

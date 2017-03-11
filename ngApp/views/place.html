@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -16,11 +17,11 @@
 <a href="/add" id="bluelink">Add Restaurant</a>
 
   <div ng-repeat="place in vm.place | orderBy: '-rating'">
-   <h5>{{place.name}} <a id="purplelink" ng-click="vm.admin(place._id)">edit</a>  <a href="#" id="redlink" ng-click="vm.remove(place._id)">delete</a></h5>
-   <p>{{place.type}}</p>
+   <h4><b>{{place.name}} </b></h5>
     <p>Score: {{place.rating}} | Food: {{place.food}} | Service: {{place.service}} | Decor: {{place.decor}}</p>
     <p>Style: {{place.style}}</p>
     <p>"{{place.comment}}"</p>
+    <p><a id="purplelink" ng-click="vm.admin(place._id)">edit</a>  <a href="#" id="redlink" ng-click="vm.remove(place._id)">delete</a></p>
   <hr>
   </div>
 </div>
