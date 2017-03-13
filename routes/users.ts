@@ -14,6 +14,7 @@ router.post('/Register', (req, res, next) => {
   user.setPassword(req.body.password);
 
   user.save(function(err, newUser){
+    console.log(err);
     if(err){
       return next(err);
     }
