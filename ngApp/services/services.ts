@@ -21,7 +21,8 @@ export class UserService {
      private PlaceResource;
 
      public get(id) {
-       return this.PlaceResource.get({id:id});
+       return this.PlaceResource.query({id:id});
+       
      }
 
      public filter(type) {

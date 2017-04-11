@@ -22,7 +22,7 @@ var smartdine;
                 this.PlaceResource = $resource('/api/place/:id');
             }
             PlaceService.prototype.get = function (id) {
-                return this.PlaceResource.get({ id: id });
+                return this.PlaceResource.query({ id: id });
             };
             PlaceService.prototype.filter = function (type) {
                 return this.PlaceResource.query({ id: type });

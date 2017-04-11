@@ -22,6 +22,7 @@ namespace smartdine.Controllers {
         let payload = JSON.parse(window.atob(token.split('.')[1]));
         if(payload.role === 'Admin') {
           this.$state.go('edit' , {id: id})
+
         }
         else {alert('Only Admins can edit restaurants.')}
       }
@@ -55,9 +56,10 @@ namespace smartdine.Controllers {
 export class EditController {
       public Place
 public placeId
+public type
 
-// public name
-// public type
+public name
+
 
       public save() {
 
@@ -76,10 +78,12 @@ public placeId
       ) {
         this.placeId = $stateParams['id'];
 
+// this.name =$stateParams['name'];
 
-// this.Place = $stateParams['id'];
-//       this.Place = placeService.filter(this.type);
+//       this.Place = placeService.get(this.placeId);
+// this.Place.placeId = $stateParams['id'];
 // this.Place.name = $stateParams['id'];
+// this.Place.name = $stateParams['name'];
       }
   }
 

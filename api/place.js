@@ -11,7 +11,6 @@ router.get('/', function (req, res) {
     });
 });
 router.get('/:id', function (req, res) {
-    console.log(req.params["id"]);
     place_1.default.find({ type: req.params["id"] }).then(function (types) {
         res.json(types);
     }).catch(function (err) {
